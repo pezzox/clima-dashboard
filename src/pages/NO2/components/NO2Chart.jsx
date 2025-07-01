@@ -53,6 +53,7 @@ const NO2Chart = ({ startYear, endYear }) => {
       data={chartData}
       options={{
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: { display: true },
           title: { display: false },

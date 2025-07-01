@@ -66,6 +66,7 @@ const IceChart = ({ startYear, endYear }) => {
       data={chartData}
       options={{
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
           y: {
             beginAtZero: false,

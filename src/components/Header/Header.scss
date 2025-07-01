@@ -1,21 +1,15 @@
-// src/components/Header/Header.scss
-
 @use '../../styles/variables' as *;
 
-
-// Header main wrapper that stays on top of the page
 .main-header {
-  position: fixed; // Keeps the header fixed at the top on scroll
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 999; // Ensures it appears above background and video layers
+  z-index: 999;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+  backdrop-filter: blur(4px);
+  padding: 1rem 2rem;
 
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent); // Dark overlay for readability
-  backdrop-filter: blur(4px); // Adds blur for a modern look
-  padding: 1rem 2rem; // Adds space inside the header
-
-  // Inner container for layout and alignment
   .header-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -24,31 +18,62 @@
     align-items: center;
   }
 
-  // Logo styling
   .logo img {
-    height: 48px; // Makes the logo more visible
+    height: 48px;
   }
 
-  // Navigation links container
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span {
+      width: 24px;
+      height: 2px;
+      background: white;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
+
   .nav-links {
     display: flex;
-    gap: 1.5rem; // Space between nav links
+    gap: 1.5rem;
 
-    // Individual link styles
     a {
-      color: white; // Ensures contrast against dark background
+      color: white;
       font-weight: 500;
       text-decoration: none;
-      transition: color 0.3s ease; // Smooth hover effect
+      transition: color 0.3s ease;
 
       &:hover {
-        color: $primary; // Highlight color on hover
+        color: $primary;
+      }
+    }
+
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 1rem 2rem;
+      display: none;
+
+      &.open {
+        display: flex;
       }
     }
   }
 }
 
-// Optional: Add top padding to hero section to prevent overlap from fixed header
 .hero-section {
   padding-top: 100px;
 }
