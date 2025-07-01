@@ -1,0 +1,16 @@
+/* _chart.scss */
+@use '../../../styles/variables' as *;
+
+.ice-chart-container {
+  background-color: $dark-green;
+  padding: 2rem;
+  border-radius: $radius;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  margin: 0 auto 3rem;
+  max-width: 1200px;
+
+  canvas {
+    background: $light-bg;
+    border-radius: $radius;
+  }
+}

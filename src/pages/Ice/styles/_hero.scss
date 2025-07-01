@@ -1,0 +1,14 @@
+/* _hero.scss */
+@use '../../../styles/variables' as *;
+
+.ice-hero {
+  text-align: center;
+  padding: 6rem 1rem 2rem;
+
+  h2 {
+    font-size: 2rem;
+    font-family: $font-heading;
+    font-weight: 600;
+    color: $text;
+  }
+}

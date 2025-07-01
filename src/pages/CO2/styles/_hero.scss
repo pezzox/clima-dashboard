@@ -1,0 +1,15 @@
+/* _hero.scss */
+
+@use '../../../styles/variables' as *;
+
+.co2-hero {
+  text-align: center;
+  padding: 6rem 1rem 2rem; // space above for fixed header
+
+  h2 {
+    font-size: 2rem;
+    font-family: $font-heading;
+    font-weight: 600;
+    color: $text;
+  }
+}

@@ -1,0 +1,28 @@
+// src/styles/_variables.scss
+
+// === Color Palette ===
+$dark-blue: #001325; // Primary dark background
+$dark-green: #0c1f2e; // Secondary dark elements
+$accent: #ff5a36; // Highlight / action color
+$primary: $accent; // Alias for primary use
+$dark-bg: $dark-blue; // Dark background for hero or sections
+$text-invert: white; // Light text on dark background
+$light-bg: #f5f7f9;
+$text-main: #eaeaea;
+$text-muted: #e0e0e0;
+$text: $text-main; // Alias
+$muted: $text-muted; // Alias
+
+// === Typography ===
+$font-heading: 'Unbounded', sans-serif;
+$font-body: 'IBM Plex Sans', sans-serif;
+
+// === Layout ===
+$radius: 0.75rem;
+$section-spacing: 6rem;
+
+// === Breakpoints ===
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;

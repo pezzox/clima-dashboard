@@ -1,0 +1,71 @@
+// src/pages/Home/styles/_about.scss
+
+@use '../../../styles/variables' as *;
+
+// === Informative Section: Why this Web App? ===
+.about-section {
+  background-color: rgba(0, 19, 37, 0.6); // semi-transparent dark background
+  backdrop-filter: blur(10px);           // blurred background (glass effect)
+  -webkit-backdrop-filter: blur(10px);   // Safari support
+  border: 1px solid rgba(255, 255, 255, 0.05); // subtle border for depth
+  border-radius: $radius;
+  padding: 2rem;
+  margin: 2rem auto $section-spacing;
+  max-width: 1000px;
+
+  .about-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    align-items: center;
+  }
+
+  .about-text,
+  .about-image {
+    flex: 1;
+    padding: 0 1.5rem; // horizontal symmetry
+    box-sizing: border-box;
+  }
+
+  .about-text {
+    h2 {
+      font-family: $font-heading;
+      font-size: 2.25rem;
+      color: $primary;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-family: $font-body;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .about-image {
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      border-radius: $radius;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+// === Responsive tweaks ===
+@media (max-width: 768px) {
+  .about-section .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+
+    .about-image img {
+      max-width: 100%;
+    }
+  }
+}

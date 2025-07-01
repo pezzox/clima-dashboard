@@ -1,0 +1,16 @@
+// src/pages/Methane/styles/index.scss
+
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+@forward './_hero';
+@forward './_chart';
+@forward './_cards';
+
+body {
+  background-color: $dark-bg; 
+  color: $text;
+  font-family: $font-body;
+}
+
+

@@ -1,0 +1,10 @@
+// src/pages/Home/styles/index.scss
+
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+@forward './_hero';
+@forward './_about';
+@forward './_quote';
+@forward './_carousel';
+

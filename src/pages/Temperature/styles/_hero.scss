@@ -1,0 +1,15 @@
+// src/pages/Temperature/styles/_hero.scss
+
+@use '../../../styles/variables' as *;
+
+.temperature-hero {
+  text-align: center;
+  padding: 6rem 1rem 2rem; // spazio sopra per compensare header fixed
+
+  h2 {
+    font-size: 2rem;
+    font-family: $font-heading;
+    font-weight: 600;
+    color: $text;
+  }
+}

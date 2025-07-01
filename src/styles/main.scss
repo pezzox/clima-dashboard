@@ -1,0 +1,13 @@
+@use './variables' as *;
+@use './mixins' as *;
+@use './layout' as layout;
+@use './reset';
+@use './loader';
+@use './animation';
+@use '../pages/Home/styles/index' as home;
+@use '../pages/Temperature/styles/index' as temperature;
+@use '../pages/CO2/styles/index' as co2;
+@use '../pages/Methane/styles/index' as methane;
+@use '../pages/NO2/styles/index' as no2;
+@use '../pages/Ice/styles/index' as arctic;
+

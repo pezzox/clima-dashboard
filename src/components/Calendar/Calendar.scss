@@ -1,0 +1,35 @@
+/* Calendar.scss */
+
+@use '../../styles/variables' as *;
+
+.calendar-range {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding-top: 1rem;
+
+  label {
+    color: $text;
+    font-family: $font-body;
+    font-size: 1rem;
+
+    select {
+      margin-left: 0.5rem;
+      padding: 0.3rem 0.6rem;
+      border: 2px solid $accent;
+      border-radius: $radius;
+      background-color: $dark-blue;
+      color: $text-invert;
+      font-family: $font-body;
+    }
+  }
+}
+
+.calendar-hint {
+  text-align: center;
+  color: $muted;
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 0.25rem;
+  margin-bottom: 2rem;
+}

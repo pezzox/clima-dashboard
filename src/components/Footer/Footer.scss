@@ -1,0 +1,39 @@
+// src/components/Footer/Footer.scss
+
+@use '../../styles/variables' as *;
+
+// === Site footer ===
+.main-footer {
+  // Matches the header's transparent gradient and blur effect
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  backdrop-filter: blur(4px);
+
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  font-family: $font-body;
+
+  .footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .footer-socials {
+    margin-top: 1rem;
+
+    a {
+      margin: 0 0.5rem;
+      display: inline-block;
+
+      img {
+        height: 24px;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

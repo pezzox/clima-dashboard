@@ -1,0 +1,118 @@
+// src/pages/Home/styles/_hero.scss
+
+@use '../../../styles/variables' as *;
+
+
+// Main wrapper with fixed background and scrolling content
+.hero-section {
+  position: relative; // Ensures children can layer with z-index
+  height: calc(100vh + 400px + (80vh * 5)); // Allows vertical scrolling space for parallax effect
+  overflow: hidden; // Hides overflow during animations and transitions
+
+  // Blue background layer behind the video, used for base color tone
+  .hero-color-layer {
+    position: fixed; // Stays fixed in viewport
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; // Full height of the viewport
+    background-color: $dark-bg; // Custom dark background color
+    z-index: -2; // Behind everything
+    pointer-events: none; // Allows clicks to pass through to interactive elements
+  }
+
+  // Fixed video background that sits above the color layer
+  .hero-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; // Between background color and content
+    overflow: hidden;
+
+    video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // Ensures the video covers the full container without distortion
+    }
+  }
+
+  // Foreground content that overlays video and background
+  .hero-content {
+    position: relative;
+    padding-top: 100px; // Adds space from the top for visual breathing
+    text-align: center;
+    z-index: 2; // Ensures visibility above background layers
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-family: $font-heading; // Custom heading font
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8); // Improves readability over video
+      color: $primary; // Accent color for emphasis
+    }
+
+    .hero-subtitle {
+      font-size: 1.75rem;
+      font-family: $font-body; // Custom body font
+      font-weight: 300;
+      color: $text-muted; 
+      margin-bottom: 5rem;
+      text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5); // Soft shadow for better contrast
+    }
+
+    // Scrollable quote stack that appears progressively on scroll
+    .quotes-scroll {
+      display: flex;
+      flex-direction: column;
+      gap: 80vh; // Large vertical spacing for scroll-triggered appearance
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+
+      .scroll-quote {
+        opacity: 0; // Initially hidden
+        transform: translateY(40px); // Slight offset for animation effect
+        transition: opacity 1.2s ease, transform 1.2s ease;
+        font-size: 2rem;
+        font-weight: 600;
+        color: $text-invert;
+        text-shadow: 1px 1px 10px $dark-bg; // Contrast against background
+        padding: 1.25rem;
+        text-align: center;
+
+        &.quote-visible {
+          opacity: 1; // Fades in
+          transform: translateY(0); // Moves into place
+        }
+      }
+    }
+  }
+
+  // Responsive adjustments for smaller screens
+  @media (max-width: $bp-md) {
+    height: calc(100vh + 300px + (50vh * 5)); // Reduced scroll space
+
+    .hero-content {
+      .hero-title {
+        font-size: 2rem; // Smaller title font
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem; // Smaller subtitle font
+        margin-bottom: 2.5rem; // Less spacing
+      }
+
+      .quotes-scroll {
+        gap: 50vh; // Smaller gap for shorter screens
+
+        .scroll-quote {
+          font-size: 1.25rem; // Smaller quote text
+        }
+      }
+    }
+  }
+}
